@@ -37,7 +37,8 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        return "eeeee";
+        $approvedprograms =  DB::table('books')->where('id', '1')->get();
+        return $approvedprograms;
     }
 
     /**
