@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Book;
+use Illuminate\Support\Facades\DB;
+use App\Models\Book;
 use App\Http\Resources\BookResource;
 use Illuminate\Http\Request;
 
@@ -37,8 +38,7 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
-        $approvedprograms =  DB::table('books')->where('id', '1')->get();
-        return $approvedprograms;
+        return new BookResource($book);
     }
 
     /**
